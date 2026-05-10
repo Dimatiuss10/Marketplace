@@ -35,8 +35,9 @@ export default function Login() {
       sessionStorage.setItem("agro_session", JSON.stringify(data.data));
       sessionStorage.setItem("agro_token", data.data.token);
       redirectByRole(data.data.role);
-    } catch {
-      setError("No se pudo conectar con el servidor.");
+    } catch (err) {
+      const msg = err.response?.data?.message;
+      setError(msg || "No se pudo conectar con el servidor.");
     } finally {
       setLoading(false);
     }
@@ -85,7 +86,7 @@ export default function Login() {
           <input
             className={s.input}
             type="email"
-            placeholder="correo@ejemplo.com"
+            placeholder="ejemplo@agromarket.com"
             value={email}
             onChange={e => setEmail(e.target.value)}
             onKeyDown={e => e.key === "Enter" && handleLogin()}
@@ -93,7 +94,7 @@ export default function Login() {
         </div>
 
         <div className={s.field}>
-          <label className={s.label}>Contrasena</label>
+          <label className={s.label}>Contraseña</label>
           <input
             className={s.input}
             type="password"
@@ -113,7 +114,7 @@ export default function Login() {
         <p className={s.register}>
           ¿No tienes cuenta?{" "}
           <span className={s.link} onClick={() => setModalOpen(true)}>
-            Registrate aqui
+            Registrate aquí
           </span>
         </p>
 

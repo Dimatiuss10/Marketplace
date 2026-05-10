@@ -1,8 +1,3 @@
-/**
- * AgroMarket — app.js
- * Configura Express, middlewares globales y rutas.
- */
-
 require("dotenv").config();
 
 const express        = require("express");

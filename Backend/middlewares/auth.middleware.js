@@ -1,10 +1,3 @@
-/**
- * AgroMarket — middlewares/auth.middleware.js
- * Verifica que la petición tenga un JWT válido en el header Authorization.
- * Uso: router.get("/ruta", requireAuth, controller.metodo)
- *      router.get("/ruta", requireAuth, requireRole("admin"), controller.metodo)
- */
-
 const jwt = require("jsonwebtoken");
 
 const SECRET = process.env.JWT_SECRET || "dev_secret_inseguro";

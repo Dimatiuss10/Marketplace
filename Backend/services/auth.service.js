@@ -8,7 +8,7 @@ const EXPIRES_IN = process.env.JWT_EXPIRES_IN || "8h";
 
 const login = async ({ email, password }) => {
   if (!email || !password) {
-    const err = new Error("Email y contrasena son requeridos");
+    const err = new Error("Email y contraseña son requeridos");
     err.status = 400;
     throw err;
   }
@@ -22,7 +22,7 @@ const login = async ({ email, password }) => {
   if (admins.length > 0) {
     const match = await bcrypt.compare(password, admins[0].password);
     if (!match) {
-      const err = new Error("Credenciales incorrectas");
+      const err = new Error("Correo o contraseña incorrectos");
       err.status = 401;
       throw err;
     }
@@ -43,7 +43,7 @@ const login = async ({ email, password }) => {
     const user = users[0];
     const match = await bcrypt.compare(password, user.password);
     if (!match) {
-      const err = new Error("Credenciales incorrectas");
+      const err = new Error("Correo o contraseña incorrectos");
       err.status = 401;
       throw err;
     }
@@ -56,7 +56,7 @@ const login = async ({ email, password }) => {
     return { role: user.role, user: userData, token };
   }
 
-  const err = new Error("Credenciales incorrectas");
+  const err = new Error("Correo o contraseña incorrectos");
   err.status = 401;
   throw err;
 };
