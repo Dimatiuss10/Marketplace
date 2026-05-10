@@ -1,8 +1,3 @@
-/**
- * AgroMarket — services/products.service.js
- * Lógica de negocio y consultas a la base de datos MySQL.
- */
-
 const db = require("../db");
 
 // ── Validación ────────────────────────────────────────────────────────────────

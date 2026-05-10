@@ -79,11 +79,16 @@ export default function Vendedor() {
       {/* Header */}
       <header className={s.header}>
         <div className={s.logo}>
-          🌾AgroMarket
+          🌾AgroMarket <span className={s.logoSub}>Urabá</span>
         </div>
         <div className={s.headerRight}>
-          <span className={s.userName}>{session?.user?.name || "Vendedor"}</span>
-          <button className={s.btnLogout}>Subsidios</button>
+          <span className={s.userName}>Bienvenido, {session?.user?.name || "Vendedor"}</span>
+          <button
+            style={{ background: "transparent", border: "1px solid rgba(221,232,213,0.4)", color: "#dde8d5", padding: "0.35rem 0.9rem", borderRadius: "20px", fontSize: "0.8rem", cursor: "pointer" }}
+            onClick={() => navigate("/pedidos-vendedor")}
+          >
+            Pedidos
+          </button>
           <button className={s.btnLogout} onClick={logout}>Cerrar sesion</button>
         </div>
       </header>

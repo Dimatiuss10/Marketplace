@@ -1,9 +1,3 @@
-/**
- * AgroMarket — routes/products.routes.js
- * Define los endpoints del módulo de productos.
- * Solo conecta rutas con su controlador — sin lógica.
- */
-
 const express    = require("express");
 const router     = express.Router();
 const controller = require("../controllers/products.controller");

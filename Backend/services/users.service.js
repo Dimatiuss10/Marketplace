@@ -1,8 +1,3 @@
-/**
- * AgroMarket — services/users.service.js
- * Lógica de negocio y consultas a la base de datos MySQL.
- */
-
 const db     = require("../db");
 const bcrypt = require("bcrypt");
 

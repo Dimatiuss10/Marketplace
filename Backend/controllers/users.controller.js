@@ -1,7 +1,3 @@
-/**
- * Recibe las peticiones HTTP, llama al servicio y responde.
- */
-
 const service = require("../services/users.service");
 
 const getAll = async (req, res, next) => {

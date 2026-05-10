@@ -6,6 +6,8 @@ import Admin     from "./pages/Admin";
 import Vendedor  from "./pages/Vendedor";
 import Comprador from "./pages/Comprador";
 import ResetPassword from "./pages/ResetPassword";
+import PedidosComprador from "./pages/PedidosComprador";
+import PedidosVendedor  from "./pages/PedidosVendedor";
 
 // Protege rutas que requieren sesión
 function PrivateRoute({ children, roles }) {
@@ -41,6 +43,19 @@ export default function App() {
             <Comprador />
           </PrivateRoute>
         } />
+
+        <Route path="/pedidos-comprador" element={
+          <PrivateRoute roles={["Comprador"]}>
+            <PedidosComprador />
+          </PrivateRoute>
+        } />
+
+        <Route path="/pedidos-vendedor" element={
+          <PrivateRoute roles={["Vendedor"]}>
+            <PedidosVendedor />
+          </PrivateRoute>
+        } />
+        
       </Routes>
     </BrowserRouter>
   );

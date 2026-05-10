@@ -1,0 +1,460 @@
+/* ── General ── */
+.page {
+  font-family: 'Inter', sans-serif;
+  background: #f5f0e8;
+  min-height: 100vh;
+  color: #1a2e10;
+}
+
+/* ── Header ── */
+.header {
+  background: #2d4a1e;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  color: #e8c547;
+}
+
+.logoSub {
+  color: #dde8d5;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  margin-left: 0.5rem;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userName {
+  color: #dde8d5;
+  font-size: 0.85rem;
+}
+
+.btnNav {
+  background: transparent;
+  border: 1px solid rgba(221,232,213,0.4);
+  color: #dde8d5;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btnNav:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.btnNavActive {
+  background: rgba(232,197,71,0.15);
+  border-color: rgba(232,197,71,0.5);
+  color: #e8c547;
+}
+
+.btnLogout {
+  background: transparent;
+  border: 1px solid rgba(221,232,213,0.4);
+  color: #dde8d5;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btnLogout:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* ── Page header ── */
+.pageHeader {
+  background: #fff;
+  border-bottom: 1px solid rgba(74,124,63,0.1);
+  padding: 1.5rem 2rem;
+}
+
+.pageHeader h1 {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  color: #2d4a1e;
+}
+
+.pageHeader p {
+  color: #4a5e3a;
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Main ── */
+.main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Order card ── */
+.orderCard {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(74,124,63,0.12);
+  box-shadow: 0 4px 24px rgba(45,74,30,0.08);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.orderHeader {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0ece4;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.orderMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.orderId {
+  font-size: 0.75rem;
+  color: #4a5e3a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.orderDate {
+  font-size: 0.82rem;
+  color: #7a7a6e;
+}
+
+.orderBuyer {
+  font-size: 0.85rem;
+  color: #4a5e3a;
+  font-weight: 500;
+}
+
+.orderRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.orderTotal {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d4a1e;
+}
+
+/* ── Status badge ── */
+.badge {
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badgePendiente  { background: rgba(232,197,71,0.2);  color: #8b6914; }
+.badgeDespachado { background: rgba(74,124,63,0.15);  color: #2d5a27; }
+.badgeEntregado  { background: rgba(45,74,30,0.15);   color: #1a3a15; }
+.badgeDevuelto   { background: rgba(192,57,43,0.12);  color: #c0392b; }
+
+/* ── Items ── */
+.orderItems {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.orderItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f5f0e8;
+}
+
+.orderItem:last-child {
+  border-bottom: none;
+}
+
+.itemName {
+  font-size: 0.9rem;
+  color: #2c2c1e;
+  font-weight: 500;
+}
+
+.itemQty {
+  font-size: 0.8rem;
+  color: #7a7a6e;
+  margin-top: 0.1rem;
+}
+
+.itemPrice {
+  font-size: 0.9rem;
+  color: #4a7c3f;
+  font-weight: 600;
+}
+
+/* ── Actions ── */
+.orderActions {
+  padding: 1rem 1.5rem;
+  background: #faf7f2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  border-top: 1px solid #f0ece4;
+}
+
+.btnAction {
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btnReturn {
+  background: transparent;
+  color: #c0392b;
+  border: 1.5px solid #c0392b;
+}
+
+.btnReturn:hover {
+  background: #c0392b;
+  color: #fff;
+}
+
+.btnRate {
+  background: #4a7c3f;
+  color: #fff;
+}
+
+.btnRate:hover {
+  background: #2d5a27;
+}
+
+.btnStatus {
+  background: #2d4a1e;
+  color: #e8c547;
+}
+
+.btnStatus:hover {
+  background: #1a3a15;
+}
+
+.btnStatus:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ratedLabel {
+  font-size: 0.82rem;
+  color: #4a7c3f;
+  font-weight: 500;
+}
+
+/* ── Select estado ── */
+.selectStatus {
+  padding: 0.5rem 0.9rem;
+  border: 1.5px solid rgba(74,124,63,0.3);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #1a2e10;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ── Modal calificacion ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background: #faf7f2;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #7a7a6e;
+}
+
+.modalTitle {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  color: #2d4a1e;
+  margin-bottom: 1.2rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #dde0d8;
+  transition: color 0.15s;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.starActive {
+  color: #e8c547;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid rgba(74,124,63,0.25);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #1a2e10;
+  background: #fff;
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.textarea:focus {
+  border-color: #4a7c3f;
+}
+
+.btnSubmit {
+  width: 100%;
+  padding: 0.75rem;
+  background: #4a7c3f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btnSubmit:hover {
+  background: #2d5a27;
+}
+
+/* ── Toast ── */
+.toastContainer {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  z-index: 999;
+}
+
+.toast {
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.87rem;
+  font-weight: 500;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  max-width: 300px;
+  animation: slideIn 0.3s ease;
+}
+
+.toastSuccess { background: #4a7c3f; }
+.toastError   { background: #c0392b; }
+
+@keyframes slideIn {
+  from { transform: translateX(120%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* ── Empty ── */
+.empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #7a7a6e;
+}
+
+.emptyTitle {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  color: #2c2c1e;
+  margin-bottom: 0.5rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  color: #7a7a6e;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+  }
+
+  .userName {
+    display: none;
+  }
+
+  .main {
+    padding: 0 1rem 4rem;
+  }
+
+  .orderHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

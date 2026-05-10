@@ -1,7 +1,3 @@
-/**
- * Sin lógica de negocio ni consultas SQL.
- */
-
 const service = require("../services/products.service");
 
 const getAll = async (req, res, next) => {

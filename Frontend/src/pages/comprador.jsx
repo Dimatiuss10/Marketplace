@@ -65,11 +65,28 @@ export default function Comprador() {
     setCarrito(prev => prev.filter(i => i.id !== id));
   }
 
-  function checkout() {
-    const total = carrito.reduce((s, i) => s + i.price * i.qty, 0);
-    setCarrito([]);
-    setCartOpen(false);
-    toast(`Compra por $${Math.round(total).toLocaleString("es-CO")} realizada con exito.`);
+  async function checkout() {
+    try {
+      const items = carrito.map(i => ({
+        id:      i.id,
+        user_id: i.user_id,
+        name:    i.name,
+        price:   i.price,
+        qty:     i.qty,
+      }));
+
+      const { data } = await api.post("/orders", { items });
+      if (!data.success) {
+        toast("Error al procesar el pedido.", "error");
+        return;
+      }
+
+      setCarrito([]);
+      setCartOpen(false);
+      toast("Pedido realizado correctamente.");
+    } catch {
+      toast("No se pudo conectar con el servidor.", "error");
+    }
   }
 
   function logout() {
@@ -97,10 +114,16 @@ export default function Comprador() {
           🌾AgroMarket <span className={s.logoSub}>Urabá</span>
         </div>
         <div className={s.headerRight}>
-          <span className={s.userName}>{session?.user?.name}</span>
+          <span className={s.userName}>Bienvenido, {session?.user?.name}</span>
           <button className={s.btnCart} onClick={() => setCartOpen(true)}>
             Carrito
             <span className={s.cartBadge}>{countCarrito}</span>
+          </button>
+          <button
+            style={{ background: "transparent", border: "1px solid rgba(221,232,213,0.4)", color: "#dde8d5", padding: "0.35rem 0.9rem", borderRadius: "20px", fontSize: "0.8rem", cursor: "pointer" }}
+            onClick={() => navigate("/pedidos-comprador")}
+          >
+            Mis pedidos
           </button>
           <button className={s.btnLogout} onClick={logout}>Cerrar sesion</button>
         </div>
