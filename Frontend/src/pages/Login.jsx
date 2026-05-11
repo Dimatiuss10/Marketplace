@@ -32,8 +32,9 @@ export default function Login() {
     try {
       const { data } = await api.post("/auth/login", { email, password });
       if (!data.success) { setError(data.message || "Contraseña incorrecta."); return; }
-      sessionStorage.setItem("agro_session", JSON.stringify(data.data));
-      sessionStorage.setItem("agro_token", data.data.token);
+      const { token, ...sessionData } = data.data;
+      sessionStorage.setItem("agro_session", JSON.stringify(sessionData));
+      sessionStorage.setItem("agro_token", token);
       redirectByRole(data.data.role);
     } catch (err) {
       const msg = err.response?.data?.message;
