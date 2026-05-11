@@ -12,8 +12,17 @@ const ordersRoutes = require("./routes/orders.routes");
 
 const app = express();
 
+// seguridad
+app.disable("x-powered-by");
+
 // ── Middlewares globales ──────────────────────────────────────────────────────
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://marketplace-uraba.vercel.app",
+    "http://localhost:5173"
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
